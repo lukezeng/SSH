@@ -1,4 +1,4 @@
-Struts2.3+Spring3
+Struts2.3+Spring4
 ===============
 
 Frameworks and Tools
