@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class TestAction {
 
     /**
-     * ???????? ?????????
+     * ÷–Œƒ≤‚ ‘
      */
     @Autowired
     private UserServiceI userService;
