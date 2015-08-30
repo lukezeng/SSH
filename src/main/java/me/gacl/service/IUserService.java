@@ -1,5 +1,5 @@
 package me.gacl.service;
 
-public interface UserServiceI {
+public interface IUserService {
     void test();
 }
