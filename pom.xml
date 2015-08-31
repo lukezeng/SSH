@@ -11,9 +11,10 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <jdk.version>1.7</jdk.version>
-        
+
         <spring.version>4.2.0.RELEASE</spring.version>
         <struts.version>2.3.24</struts.version>
+        <hibernate.version>4.3.11.Final</hibernate.version>
     </properties>
     <dependencies>
         <dependency>
@@ -68,16 +69,12 @@
             <groupId>org.apache.struts</groupId>
             <artifactId>struts2-core</artifactId>
             <version>${struts.version}</version>
-            <!--
-         这里的 exclusions 是排除包，因为 Struts2中有javassist，Hibernate中也有javassist,
-         所以如果要整合Hibernate，一定要排除掉Struts2中的javassist，否则就冲突了。
-         <exclusions>
-            <exclusion>
-                <groupId>javassist</groupId>
-                <artifactId>javassist</artifactId>
-            </exclusion>
-        </exclusions>
-        -->
+            <exclusions>
+                <exclusion>
+                    <groupId>javassist</groupId>
+                    <artifactId>javassist</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <!-- convention-plugin插件，使用了这个插件之后，就可以采用注解的方式配置Action -->
         <dependency>
@@ -96,6 +93,11 @@
             <groupId>org.apache.struts</groupId>
             <artifactId>struts2-spring-plugin</artifactId>
             <version>2.3.4.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>${hibernate.version}</version>
         </dependency>
     </dependencies>
     <build>
