@@ -9,7 +9,7 @@ public class TestSpring {
 
     @Test
     public void test() {
-        ApplicationContext ac = new ClassPathXmlApplicationContext("classpath:spring.xml");
+        ApplicationContext ac = new ClassPathXmlApplicationContext("spring.xml","spring-hibernate.xml");
         IUserService userService = (IUserService) ac.getBean("userService");
         userService.test();
     }
