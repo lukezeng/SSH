@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import me.gacl.dao.IUserDao;
 import me.gacl.model.User;
+import org.springframework.transaction.annotation.Transactional;
 
 @Repository("userDao")
 public class UserDao implements IUserDao {
