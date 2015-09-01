@@ -22,7 +22,6 @@ public class UserService implements IUserService {
         logger.info("Hello World!");
     }
 
-    @Transactional
     public Serializable save(User user) {
         return userDao.save(user);
     }
