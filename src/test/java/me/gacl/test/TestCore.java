@@ -2,6 +2,8 @@ package me.gacl.test;
 
 import me.gacl.model.User;
 import me.gacl.service.IUserService;
+import me.gacl.service.impl.UserService;
+import org.apache.log4j.Logger;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
@@ -10,7 +12,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import java.util.Date;
 import java.util.UUID;
 
-public class TestHibernate {
+public class TestCore {
 
     private IUserService userService;
 
@@ -26,7 +28,22 @@ public class TestHibernate {
     }
 
     @Test
-    public void testSaveMethod() {
+    public void testSpring() {
+        userService.test();
+    }
+
+    @Test
+    public void testLog4j(){
+        final Logger logger = Logger.getLogger(UserService.class);
+        logger.debug("log debug");
+        logger.info("log info");
+        logger.warn("log warn");
+        logger.error("log error");
+    }
+
+    //test for hibernate framework
+    @Test
+    public void testHibernate() {
         //ApplicationContext ac = new ClassPathXmlApplicationContext(new String[]{"spring.xml","spring-hibernate.xml"});
         //UserServiceI userService = (UserServiceI) ac.getBean("userService");
         User user = new User();

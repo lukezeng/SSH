@@ -26,6 +26,20 @@
         <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
     </listener>
 
+    <!-- openSessionInView配置 -->
+    <filter>
+        <filter-name>openSessionInViewFilter</filter-name>
+        <filter-class>org.springframework.orm.hibernate4.support.OpenSessionInViewFilter</filter-class>
+        <init-param>
+            <param-name>singleSession</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>openSessionInViewFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
     <!-- Struts2的核心过滤器配置 -->
     <filter>
         <filter-name>struts2</filter-name>
@@ -35,16 +49,6 @@
     <filter-mapping>
         <filter-name>struts2</filter-name>
         <url-pattern>*.action</url-pattern>
-    </filter-mapping>
-
-    <!-- openSessionInView配置 -->
-    <filter>
-        <filter-name>SpringOpenSessionInViewFilter</filter-name>
-        <filter-class>org.springframework.orm.hibernate4.support.OpenSessionInViewFilter</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>SpringOpenSessionInViewFilter</filter-name>
-        <url-pattern>/*</url-pattern>
     </filter-mapping>
 
     <!-- druid监控页面，使用${pageContext.request.contextPath}/druid/index.html访问 -->
