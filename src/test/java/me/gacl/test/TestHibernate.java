@@ -1,15 +1,14 @@
 package me.gacl.test;
 
-import java.util.Date;
-import java.util.UUID;
-
 import me.gacl.model.User;
 import me.gacl.service.IUserService;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import java.util.Date;
+import java.util.UUID;
 
 public class TestHibernate {
 
@@ -21,13 +20,13 @@ public class TestHibernate {
      * 比如在before方法里面初始化ApplicationContext和userService
      */
     @Before
-    public void before(){
-        ApplicationContext ac = new ClassPathXmlApplicationContext(new String[]{"spring.xml","spring-hibernate.xml"});
+    public void before() {
+        ApplicationContext ac = new ClassPathXmlApplicationContext(new String[]{"spring.xml", "spring-hibernate.xml"});
         userService = (IUserService) ac.getBean("userService");
     }
 
     @Test
-    public void testSaveMethod(){
+    public void testSaveMethod() {
         //ApplicationContext ac = new ClassPathXmlApplicationContext(new String[]{"spring.xml","spring-hibernate.xml"});
         //UserServiceI userService = (UserServiceI) ac.getBean("userService");
         User user = new User();

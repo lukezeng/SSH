@@ -1,13 +1,7 @@
 package me.gacl.model;
 
+import javax.persistence.*;
 import java.util.Date;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "T_USER", schema = "SSHE")
@@ -22,18 +16,24 @@ public class User implements java.io.Serializable {
 
     // Constructors
 
-    /** default constructor */
+    /**
+     * default constructor
+     */
     public User() {
     }
 
-    /** minimal constructor */
+    /**
+     * minimal constructor
+     */
     public User(String id, String name, String pwd) {
         this.id = id;
         this.name = name;
         this.pwd = pwd;
     }
 
-    /** full constructor */
+    /**
+     * full constructor
+     */
     public User(String id, String name, String pwd, Date createdatetime, Date modifydatetime) {
         this.id = id;
         this.name = name;
@@ -53,7 +53,7 @@ public class User implements java.io.Serializable {
         this.id = id;
     }
 
-    @Column(name = "NAME",nullable = false, length = 100)
+    @Column(name = "NAME", nullable = false, length = 100)
     public String getName() {
         return this.name;
     }

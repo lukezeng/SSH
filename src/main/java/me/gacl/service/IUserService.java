@@ -6,5 +6,6 @@ import java.io.Serializable;
 
 public interface IUserService {
     void test();
+
     Serializable save(User user);
 }

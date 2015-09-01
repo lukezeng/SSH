@@ -1,14 +1,12 @@
 package me.gacl.dao.impl;
 
-import java.io.Serializable;
-
+import me.gacl.dao.IUserDao;
+import me.gacl.model.User;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import me.gacl.dao.IUserDao;
-import me.gacl.model.User;
-import org.springframework.transaction.annotation.Transactional;
+import java.io.Serializable;
 
 @Repository("userDao")
 public class UserDao implements IUserDao {
