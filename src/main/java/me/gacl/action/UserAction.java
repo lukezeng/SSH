@@ -1,5 +1,7 @@
 package me.gacl.action;
 
+import com.opensymphony.xwork2.ModelDriven;
+import me.gacl.model.User;
 import me.gacl.service.IUserService;
 import org.apache.log4j.Logger;
 import org.apache.struts2.ServletActionContext;
@@ -14,33 +16,19 @@ import javax.servlet.http.HttpServletRequest;
 @ParentPackage("basePackage")
 @Namespace("/")
 @Action(value = "userAction")
-public class UserAction {
+public class UserAction implements ModelDriven<User>{
     private static final Logger logger = Logger.getLogger(UserAction.class);
+    User user = new User();
 
     @Autowired
     private IUserService userService;
 
-    private String name;
-    private String pwd;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getPwd() {
-        return pwd;
-    }
-
-    public void setPwd(String pwd) {
-        this.pwd = pwd;
+    public User getModel(){
+        return user;
     }
 
     public void register(){
-        logger.warn(name + ", " + pwd);
+        logger.warn(user.getName() + ", 111" + user.getPwd());
         userService.test();
     }
 }
