@@ -4,13 +4,6 @@ import me.gacl.model.User;
 
 import java.io.Serializable;
 
-public interface IUserDao {
+public interface IUserDao extends IBaseDao<User>{
 
-    /**
-     * 保存用户
-     *
-     * @param user
-     * @return
-     */
-    Serializable save(User user);
 }
