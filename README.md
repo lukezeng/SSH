@@ -1,12 +1,12 @@
-Struts2.3+Spring4
+Struts2.3 + Spring4 + Hibernate4
 ===============
 
 Frameworks and Tools
 -----------------------------------
 * Java&IDE: JDK7 Intellij
-* Backend:  Struts2.3.24 Spring4.2.0
+* Backend:  Struts2.3.24 Spring4.2.0 Hibernate4.3.11.Final
 * Frontend:
-* Database:
+* Database: MySQL
 * Web Server: Tomcat 7
 * Build Tool: Maven
 * Linux：CentoOS 6.5
